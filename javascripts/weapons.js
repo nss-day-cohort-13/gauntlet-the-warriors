@@ -18,19 +18,19 @@ Gauntlet.Weapons.Dagger = function() {
   this.damage = 4;
   this.hands = 1;
 };
-Gauntlet.Weapons.Dagger.prototype = new Weapon();
+Gauntlet.Weapons.Dagger.prototype = new Gauntlet.Weapons.Weapon();
 
 Gauntlet.Weapons.BroadSword = function() {
   this.name = "broad sword";
   this.damage = 14;
   this.hands = 2;
 };
-Gauntlet.Weapons.BroadSword.prototype = new Weapon();
+Gauntlet.Weapons.BroadSword.prototype = new Gauntlet.Weapons.Weapon();
 
 Gauntlet.Weapons.WarAxe = function() {
   this.name = "war axe";
   this.damage = 18;
   this.hands = 2;
 };
-Gauntlet.Weapons.WarAxe.prototype = new Weapon();
+Gauntlet.Weapons.WarAxe.prototype = new Gauntlet.Weapons.Weapon();
 

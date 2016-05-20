@@ -42,6 +42,9 @@ $(document).ready(function() {
         break;
       case "card--battleground":
         moveAlong = ($("#player-name").val() !== "");
+        var enemy = new Gauntlet.Combatants.Orc();
+        enemy.generateClass();
+        console.log(enemy);
         break;
     }
 

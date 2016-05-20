@@ -30,3 +30,10 @@ var WarAxe = function() {
 };
 WarAxe.prototype = new Weapon();
 
+var BusterSword = function () {
+  this.name = "buster sword";
+  this.damage = 21;
+  this.hands = 2;
+};
+BusterSword.prototype = new Weapon();
+

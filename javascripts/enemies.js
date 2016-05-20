@@ -1,4 +1,5 @@
 "use strict";
+
 Gauntlet.Combatants.Orc = function() {
   this.health = this.health + 20;
   this.species = "Orc";

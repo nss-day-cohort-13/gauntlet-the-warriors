@@ -20,6 +20,11 @@ console.log("spell: ", spell.toString());
 
 
 $(document).ready(function() {
+
+  //Variables storing player's class and weapon choices
+  var playerClass
+  var playerWeapon
+
   /*
     Show the initial view that accepts player name
    */
@@ -56,12 +61,12 @@ $(document).ready(function() {
   });
 
   $(".class__link").click(function(e) {
-    var playerClass = $(this).find(".btn__text").html();
+    playerClass = $(this).find(".btn__text").html();
     console.log("class of ", playerClass);
   });
 
   $(".weapon__link").click(function(e) {
-    var playerWeapon = $(this).find(".btn__text").html();
+    playerWeapon = $(this).find(".btn__text").html();
     console.log("player is wielding ", playerWeapon);
   });
 

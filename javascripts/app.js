@@ -33,6 +33,7 @@ $(document).ready(function() {
     var nextCard = $(this).attr("next");
     var moveAlong = false;
 
+
     switch (nextCard) {
       case "card--class":
         moveAlong = ($("#player-name").val() !== "");
@@ -52,6 +53,16 @@ $(document).ready(function() {
       $(".card").hide();
       $("." + nextCard).show();
     }
+  });
+
+  $(".class__link").click(function(e) {
+    var playerClass = $(this).find(".btn__text").html();
+    console.log("class of ", playerClass);
+  });
+
+  $(".weapon__link").click(function(e) {
+    var playerWeapon = $(this).find(".btn__text").html();
+    console.log("player is wielding ", playerWeapon);
   });
 
   /*

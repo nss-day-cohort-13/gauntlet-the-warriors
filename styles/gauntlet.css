@@ -15,13 +15,8 @@ body {
   text-align: center;
   min-width: 500px;
 }
-
-
-
-/*
-  Section styles
- */
-.card { 
+/*  Section styles */
+.card {
   display: none;
 }
 
@@ -39,9 +34,7 @@ body {
 }
 
 
-/*
-  Button styles
- */
+/*  Button styles */
 
 .btn {
   text-decoration: none;
@@ -102,4 +95,21 @@ body {
 .btn__text {
   padding: 0 50px 0 20px;
   border-radius: 0 5px 5px 0;
+}
+
+/* BattleGround Style */
+.battleground-style {
+  border: 3px solid black;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.prepare {
+  text-align: center;
+}
+
+div h1 {
+  padding-bottom: 50px;
+  text-align: center;
+  border-bottom: 5px solid black;
 }

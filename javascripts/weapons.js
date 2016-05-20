@@ -34,3 +34,4 @@ Gauntlet.Weapons.WarAxe = function() {
 };
 Gauntlet.Weapons.WarAxe.prototype = new Gauntlet.Weapons.Weapon();
 
+

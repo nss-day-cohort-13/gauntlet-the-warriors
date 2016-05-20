@@ -36,6 +36,7 @@ $(document).ready(function() {
     switch (nextCard) {
       case "card--class":
         moveAlong = ($("#player-name").val() !== "");
+        console.log($('#player-name').val())
         break;
       case "card--weapon":
         moveAlong = ($("#player-name").val() !== "");

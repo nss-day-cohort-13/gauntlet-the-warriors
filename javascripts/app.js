@@ -24,6 +24,8 @@ $(document).ready(function() {
   //Variables storing player's class and weapon choices
   var playerClass
   var playerWeapon
+  var classSelection
+  var weaponSelection
 
   /*
     Show the initial view that accepts player name
@@ -48,6 +50,10 @@ $(document).ready(function() {
         break;
       case "card--battleground":
         moveAlong = ($("#player-name").val() !== "");
+
+        console.log("class: ", classSelection);
+        console.log("weapon: ", weaponSelection);
+
         var enemy = new Gauntlet.Combatants.Orc();
         enemy.generateClass();
         console.log(enemy);
@@ -63,11 +69,15 @@ $(document).ready(function() {
   $(".class__link").click(function(e) {
     playerClass = $(this).find(".btn__text").html();
     console.log("class of ", playerClass);
+    classSelection = new Gauntlet.GuildHall.Warrior();
+    console.log(classSelection);
   });
 
   $(".weapon__link").click(function(e) {
     playerWeapon = $(this).find(".btn__text").html();
     console.log("player is wielding ", playerWeapon);
+    weaponSelection = new Gauntlet.Weapons.Weapon();
+    console.log(weaponSelection);
   });
 
   /*

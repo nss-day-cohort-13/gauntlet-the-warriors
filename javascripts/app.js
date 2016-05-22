@@ -22,8 +22,8 @@ console.log("spell: ", spell.toString());
 $(document).ready(function() {
 
   //Variables storing player's class and weapon choices
-  var playerClass
-  var playerWeapon
+  var playerClass = "";
+  var playerWeapon = "";
   var classSelection
   var weaponSelection
 
@@ -46,10 +46,10 @@ $(document).ready(function() {
         moveAlong = ($("#player-name").val() !== "");
         break;
       case "card--weapon":
-        moveAlong = ($("#player-name").val() !== "");
+        moveAlong = ($("#player-name").val() !== "") && playerClass !== "";
         break;
       case "card--battleground":
-        moveAlong = ($("#player-name").val() !== "");
+        moveAlong = ($("#player-name").val() !== "") && playerWeapon !== "";
 
         console.log("class: ", classSelection);
         console.log("weapon: ", weaponSelection);

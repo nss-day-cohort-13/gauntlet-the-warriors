@@ -21,7 +21,8 @@ console.log("spell: ", spell.toString());
 
 $(document).ready(function() {
 
-  //Variables storing player's class and weapon choices
+  //Variables storing player's name, class, and weapon choices
+  var playerName
   var playerClass = "";
   var playerWeapon = "";
   var classSelection
@@ -56,7 +57,14 @@ $(document).ready(function() {
 
         var enemy = new Gauntlet.Combatants.Orc();
         enemy.generateClass();
+        enemy.setWeapon(new Gauntlet.Weapons.Weapon);
         console.log(enemy);
+        $("#enemy_battleground").html("<h1>" + "Enemy" + "</h1>" +
+                                      "<p>" + enemy.playerName + "</p>" +
+                                      "<p>" + enemy.species + "</p>" +
+                                      "<p>" + enemy.class + "</p>" +
+                                      "<p>" + enemy.weapon + "</p>" +
+                                      "<p>" + enemy.health + "</p>");
         break;
     }
 

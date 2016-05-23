@@ -9,7 +9,7 @@ var Gauntlet = (function(gauntlet) {
     Define the base object for any player of Gauntlet,
     whether a human player or a monster.
    */
-  gauntlet.Combatants.Player = function(name) {
+  gauntlet.Combatants.Player = function(name, class, weapon) {
     this.species = null;
     this.class = null;
     this.weapon = null;

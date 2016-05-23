@@ -21,8 +21,11 @@ console.log("spell: ", spell.toString());
 
 $(document).ready(function() {
 
+  var enemy
+
   //Variables storing player's name, class, and weapon choices
-  var playerName
+  var userCharacter = new Gauntlet.Combatants.Human();
+  var user1Name = $("#player-name").val();
   var playerClass = "";
   var playerWeapon = "";
   var classSelection
@@ -44,7 +47,8 @@ $(document).ready(function() {
 
     switch (nextCard) {
       case "card--class":
-        moveAlong = ($("#player-name").val() !== "");
+        moveAlong = ($("#player-name").val() !== "" && userCharacter);
+        console.log("user", userCharacter);
         break;
       case "card--weapon":
         moveAlong = ($("#player-name").val() !== "") && playerClass !== "";
@@ -54,8 +58,16 @@ $(document).ready(function() {
 
         console.log("class: ", classSelection);
         console.log("weapon: ", weaponSelection);
+        console.log("Player", Gauntlet.Combatants.Player);
 
-        var enemy = new Gauntlet.Combatants.Orc();
+        $("#player_battleground").html("<h1>" + "Our Hero" + "</h1>" +
+                                      "<p>" + user1Name + "</p>" +
+                                      "<p>" + userCharacter.species + "</p>" +
+                                      "<p>" + userCharacter.class + "</p>" +
+                                      "<p>" + userCharacter.weapon + "</p>" +
+                                      "<p id='hero-health'>" + userCharacter.health + "</p>");
+
+        enemy = new Gauntlet.Combatants.Orc();
         enemy.generateClass();
         enemy.setWeapon(new Gauntlet.Weapons.Weapon);
         console.log(enemy);
@@ -64,7 +76,7 @@ $(document).ready(function() {
                                       "<p>" + enemy.species + "</p>" +
                                       "<p>" + enemy.class + "</p>" +
                                       "<p>" + enemy.weapon + "</p>" +
-                                      "<p>" + enemy.health + "</p>");
+                                      "<p id='enemy-health'>" + enemy.health + "</p>");
         break;
     }
 
@@ -77,20 +89,48 @@ $(document).ready(function() {
   $(".class__link").click(function(e) {
     playerClass = $(this).find(".btn__text").html();
     console.log("class of ", playerClass);
-    classSelection = new Gauntlet.GuildHall.Warrior();
-    console.log(classSelection);
+    console.dir(playerClass);
+    switch (playerClass) {
+      case "Warrior":
+        userCharacter.class = new Gauntlet.GuildHall.Warrior();
+        console.log("userCharacter", userCharacter);
+        break;
+      case "Valkyrie":
+        userCharacter.class = new Gauntlet.GuildHall.Valkyrie();
+        console.log("userCharacter", userCharacter);
+        break;
+    }
   });
 
   $(".weapon__link").click(function(e) {
     playerWeapon = $(this).find(".btn__text").html();
     console.log("player is wielding ", playerWeapon);
-    weaponSelection = new Gauntlet.Weapons.Weapon();
-    console.log(weaponSelection);
+    switch (playerWeapon) {
+      case "Bare Fists":
+        userCharacter.weapon = new Gauntlet.Weapons.Weapon();
+        console.log("userCharacter", userCharacter);
+        break;
+    }
   });
 
+// check functionality after player info is captured & added to DOM
   $(".attack__link").click(function(e) {
     console.log("Attack!");
-
+    enemy.health -= userCharacter.weapon.damage;
+    console.log(enemy.health);
+    $('#enemy-health').html(enemy.health);
+    userCharacter.health -= enemy.weapon.damage;
+    console.log(userCharacter.health);
+    $('#hero-health').html(userCharacter.health);
+    if (enemy.health <= 0) {
+        $(".attack__link").disabled;
+        console.log("You Win!");
+    } else if (userCharacter.health <= 0) {
+        $(".attack__link").disabled;
+        console.log("You Lose!");
+    } else {
+        return;
+    }
   })
 
   /*

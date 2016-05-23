@@ -27,8 +27,6 @@ $(document).ready(function() {
   var userCharacter = new Gauntlet.Combatants.Human();
   var playerClass = "";
   var playerWeapon = "";
-  var classSelection
-  var weaponSelection
 
   /*
     Show the initial view that accepts player name
@@ -56,8 +54,6 @@ $(document).ready(function() {
       case "card--battleground":
         moveAlong = ($("#player-name").val() !== "") && playerWeapon !== "";
 
-        console.log("class: ", classSelection);
-        console.log("weapon: ", weaponSelection);
         console.log("Player", Gauntlet.Combatants.Player);
 
         $("#player_battleground").html("<h1>" + "Our Hero" + "</h1>" +
@@ -108,7 +104,35 @@ $(document).ready(function() {
     switch (playerWeapon) {
       case "Bare Fists":
         userCharacter.weapon = new Gauntlet.Weapons.Weapon();
-        console.log("userCharacter", userCharacter);
+        console.log("userCharacter weapon: ", userCharacter);
+        break;
+      case "Dagger":
+        userCharacter.weapon = new Gauntlet.Weapons.Dagger();
+        console.log("userCharacter weapon: ", userCharacter);
+        break;
+      case "Broad Sword":
+        userCharacter.weapon = new Gauntlet.Weapons.BroadSword();
+        console.log("userCharacter weapon: ", userCharacter);
+        break;
+      case "War Axe":
+        userCharacter.weapon = new Gauntlet.Weapons.WarAxe();
+        console.log("userCharacter weapon: ", userCharacter);
+        break;
+      case "Blunderbuss":
+      userCharacter.weapon = new Gauntlet.Weapons.Blunderbuss();
+        console.log("userCharacter weapon: ", userCharacter);
+        break;
+        case "1911":
+      userCharacter.weapon = new Gauntlet.Weapons.N1911();
+        console.log("userCharacter weapon: ", userCharacter);
+        break;
+      case "Garand":
+      userCharacter.weapon = new Gauntlet.Weapons.Garand();
+        console.log("userCharacter weapon: ", userCharacter);
+        break;
+      case "Kalashnikov":
+      userCharacter.weapon = new Gauntlet.Weapons.Kalashnikov();
+        console.log("userCharacter weapon: ", userCharacter);
         break;
     }
   });
@@ -128,7 +152,7 @@ $(document).ready(function() {
         $("button").attr('disabled', true);
         console.log("You Win!");
     } else if (userCharacter.health <= 0) {
-        $('#hero-health').html("Yout are Dead");
+        $('#hero-health').html("You are Dead");
         $('#enemy-health').html("You are the Winner");
         $("button").attr('disabled', true);
         console.log("You Lose!");

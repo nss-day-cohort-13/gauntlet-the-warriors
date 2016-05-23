@@ -6,7 +6,7 @@ var Gauntlet = (function(gauntlet) {
 
   gauntlet.Weapons.Weapon = function() {
     this.name = "bare hands";
-    this.damage = 1;
+    this.damage = 40;
     this.hands = 2;
 
     this.toString = function() {

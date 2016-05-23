@@ -6,7 +6,7 @@ var Gauntlet = (function(gauntlet) {
   gauntlet.Combatants.Orc = function() {
     this.health = this.health + 20;
     this.species = "Orc";
-    this.allowedClasses = ["Warrior", "Berserker", "Shaman"];
+    this.allowedClasses = ["Saiyan", "BeastMaster", "Boxer", "Samurai"];
 
     this.generateClass = function() {
       // Get a random index from the allowed classes array

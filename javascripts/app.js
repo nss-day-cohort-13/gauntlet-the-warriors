@@ -80,6 +80,11 @@ $(document).ready(function() {
     console.log(weaponSelection);
   });
 
+  $(".attack__link").click(function(e) {
+    console.log("Attack!");
+
+  })
+
   /*
     When the back button clicked, move back a view
    */

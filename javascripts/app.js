@@ -9,7 +9,7 @@ console.log(warrior.toString());
 
 var orc = new Gauntlet.Combatants.Orc();
 orc.generateClass();
-orc.setWeapon(new Gauntlet.Weapons.BroadSword());
+orc.setWeapon(new Gauntlet.Weapons.Sword());
 console.log(orc.toString());
 
 /*
@@ -28,8 +28,6 @@ $(document).ready(function() {
   var user1Name = $("#player-name").val();
   var playerClass = "";
   var playerWeapon = "";
-  var classSelection
-  var weaponSelection
 
   /*
     Show the initial view that accepts player name
@@ -56,8 +54,6 @@ $(document).ready(function() {
       case "card--battleground":
         moveAlong = ($("#player-name").val() !== "") && playerWeapon !== "";
 
-        console.log("class: ", classSelection);
-        console.log("weapon: ", weaponSelection);
         console.log("Player", Gauntlet.Combatants.Player);
 
         $("#player_battleground").html("<h1>" + "Our Hero" + "</h1>" +
@@ -108,7 +104,19 @@ $(document).ready(function() {
     switch (playerWeapon) {
       case "Bare Fists":
         userCharacter.weapon = new Gauntlet.Weapons.Weapon();
-        console.log("userCharacter", userCharacter);
+        console.log("userCharacter weapon: ", userCharacter);
+        break;
+      case "Sword":
+        userCharacter.weapon = new Gauntlet.Weapons.Sword();
+        console.log("userCharacter weapon: ", userCharacter);
+        break;
+      case "War Axe":
+        userCharacter.weapon = new Gauntlet.Weapons.WarAxe();
+        console.log("userCharacter weapon: ", userCharacter);
+        break;
+      case "Blunderbuss":
+      userCharacter.weapon = new Gauntlet.Weapons.Blunderbuss();
+        console.log("userCharacter weapon: ", userCharacter);
         break;
     }
   });

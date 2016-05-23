@@ -21,12 +21,12 @@ var Gauntlet = (function(gauntlet) {
   };
   gauntlet.Weapons.Dagger.prototype = new gauntlet.Weapons.Weapon();
 
-  gauntlet.Weapons.BroadSword = function() {
-    this.name = "broad sword";
+  gauntlet.Weapons.Sword = function() {
+    this.name = "sword";
     this.damage = 14;
     this.hands = 2;
   };
-  gauntlet.Weapons.BroadSword.prototype = new gauntlet.Weapons.Weapon();
+  gauntlet.Weapons.Sword.prototype = new gauntlet.Weapons.Weapon();
 
   gauntlet.Weapons.WarAxe = function() {
     this.name = "war axe";
@@ -34,6 +34,13 @@ var Gauntlet = (function(gauntlet) {
     this.hands = 2;
   };
   gauntlet.Weapons.WarAxe.prototype = new gauntlet.Weapons.Weapon();
+
+  gauntlet.Weapons.Blunderbuss = function() {
+    this.name = "blunderbuss";
+    this.damage = 25;
+    this.hands = 2;
+  };
+  gauntlet.Weapons.Blunderbuss.prototype = new gauntlet.Weapons.Weapon();
 
   return gauntlet;
 

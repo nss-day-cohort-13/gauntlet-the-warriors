@@ -9,7 +9,7 @@ console.log(warrior.toString());
 
 var orc = new Gauntlet.Combatants.Orc();
 orc.generateClass();
-orc.setWeapon(new Gauntlet.Weapons.Sword());
+orc.setWeapon(new Gauntlet.Weapons.BroadSword());
 console.log(orc.toString());
 
 /*
@@ -106,8 +106,12 @@ $(document).ready(function() {
         userCharacter.weapon = new Gauntlet.Weapons.Weapon();
         console.log("userCharacter weapon: ", userCharacter);
         break;
-      case "Sword":
-        userCharacter.weapon = new Gauntlet.Weapons.Sword();
+      case "Dagger":
+        userCharacter.weapon = new Gauntlet.Weapons.Dagger();
+        console.log("userCharacter weapon: ", userCharacter);
+        break;
+      case "Broad Sword":
+        userCharacter.weapon = new Gauntlet.Weapons.BroadSword();
         console.log("userCharacter weapon: ", userCharacter);
         break;
       case "War Axe":
@@ -116,6 +120,18 @@ $(document).ready(function() {
         break;
       case "Blunderbuss":
       userCharacter.weapon = new Gauntlet.Weapons.Blunderbuss();
+        console.log("userCharacter weapon: ", userCharacter);
+        break;
+        case "1911":
+      userCharacter.weapon = new Gauntlet.Weapons.N1911();
+        console.log("userCharacter weapon: ", userCharacter);
+        break;
+      case "Garand":
+      userCharacter.weapon = new Gauntlet.Weapons.Garand();
+        console.log("userCharacter weapon: ", userCharacter);
+        break;
+      case "Kalashnikov":
+      userCharacter.weapon = new Gauntlet.Weapons.Kalashnikov();
         console.log("userCharacter weapon: ", userCharacter);
         break;
     }

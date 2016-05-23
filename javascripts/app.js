@@ -25,7 +25,6 @@ $(document).ready(function() {
 
   //Variables storing player's name, class, and weapon choices
   var userCharacter = new Gauntlet.Combatants.Human();
-  var user1Name = $("#player-name").val();
   var playerClass = "";
   var playerWeapon = "";
   var classSelection
@@ -48,6 +47,7 @@ $(document).ready(function() {
     switch (nextCard) {
       case "card--class":
         moveAlong = ($("#player-name").val() !== "" && userCharacter);
+        userCharacter.playerName = $("#player-name").val();
         console.log("user", userCharacter);
         break;
       case "card--weapon":
@@ -61,7 +61,7 @@ $(document).ready(function() {
         console.log("Player", Gauntlet.Combatants.Player);
 
         $("#player_battleground").html("<h1>" + "Our Hero" + "</h1>" +
-                                      "<p>" + user1Name + "</p>" +
+                                      "<p>" + userCharacter.playerName + "</p>" +
                                       "<p>" + userCharacter.species + "</p>" +
                                       "<p>" + userCharacter.class + "</p>" +
                                       "<p>" + userCharacter.weapon + "</p>" +
@@ -123,10 +123,14 @@ $(document).ready(function() {
     console.log(userCharacter.health);
     $('#hero-health').html(userCharacter.health);
     if (enemy.health <= 0) {
-        $(".attack__link").disabled;
+        $('#enemy-health').html("You are Dead");
+        $('#hero-health').html("You are the Winner");
+        $("button").attr('disabled', true);
         console.log("You Win!");
     } else if (userCharacter.health <= 0) {
-        $(".attack__link").disabled;
+        $('#hero-health').html("Yout are Dead");
+        $('#enemy-health').html("You are the Winner");
+        $("button").attr('disabled', true);
         console.log("You Lose!");
     } else {
         return;

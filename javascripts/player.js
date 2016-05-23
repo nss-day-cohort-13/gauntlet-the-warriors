@@ -13,8 +13,8 @@ var Gauntlet = (function(gauntlet) {
     this.species = null;
     this.class = null;
     this.weapon = null;
-
-    this.playerName = name || "unknown adventurer";
+    console.log("test name", $("#player-name").val());
+    this.playerName = $("#player-name").val() || "unknown adventurer";
     this.health = Math.floor(Math.random() * 40 + 50);
     this.limbs = ["head", "neck", "arm", "leg", "torso"];
     this.skinColor = "gray";

@@ -6,7 +6,7 @@ var Gauntlet = (function(gauntlet) {
 
   gauntlet.Weapons.Weapon = function() {
     this.name = "bare hands";
-    this.damage = 40;
+    this.damage = 1;
     this.hands = 2;
 
     this.toString = function() {
@@ -34,6 +34,34 @@ var Gauntlet = (function(gauntlet) {
     this.hands = 2;
   };
   gauntlet.Weapons.WarAxe.prototype = new gauntlet.Weapons.Weapon();
+
+  gauntlet.Weapons.Blunderbuss = function() {
+    this.name = "blunderbuss";
+    this.damage = 20;
+    this.hands = 2;
+  };
+  gauntlet.Weapons.Blunderbuss.prototype = new gauntlet.Weapons.Weapon();
+
+  gauntlet.Weapons.N1911 = function() {
+    this.name = "1911";
+    this.damage = 23;
+    this.hands = 2;
+  };
+  gauntlet.Weapons.N1911.prototype = new gauntlet.Weapons.Weapon();
+
+  gauntlet.Weapons.Garand = function() {
+    this.name = "garand";
+    this.damage = 30;
+    this.hands = 2;
+  };
+  gauntlet.Weapons.Garand.prototype = new gauntlet.Weapons.Weapon();
+
+  gauntlet.Weapons.Kalashnikov = function() {
+    this.name = "kalashnikov";
+    this.damage = 25;
+    this.hands = 2;
+  };
+  gauntlet.Weapons.Kalashnikov.prototype = new gauntlet.Weapons.Weapon();
 
   return gauntlet;
 

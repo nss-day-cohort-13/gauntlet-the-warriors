@@ -91,7 +91,7 @@ $(document).ready(function() {
         userCharacter.class = new Gauntlet.GuildHall.Saiyan();
         console.log("userCharacter", userCharacter);
         break;
-      case "BeastMaster":
+      case "Beast Master":
         userCharacter.class = new Gauntlet.GuildHall.BeastMaster();
         console.log("userCharacter", userCharacter);
         break;
@@ -103,7 +103,7 @@ $(document).ready(function() {
         userCharacter.class = new Gauntlet.GuildHall.Samurai();
         console.log("userCharacter", userCharacter);
         break;
-      case "BlackMage":
+      case "Black Mage":
         userCharacter.class = new Gauntlet.GuildHall.BlackMage();
         console.log("userCharacter", userCharacter);
         break;
@@ -111,7 +111,7 @@ $(document).ready(function() {
         userCharacter.class = new Gauntlet.GuildHall.Illusionist();
         console.log("userCharacter", userCharacter);
         break;
-      case "SailorScout":
+      case "Sailor Scout":
         userCharacter.class = new Gauntlet.GuildHall.SailorScout();
         console.log("userCharacter", userCharacter);
         break;

@@ -152,7 +152,7 @@ $(document).ready(function() {
         $("button").attr('disabled', true);
         console.log("You Win!");
     } else if (userCharacter.health <= 0) {
-        $('#hero-health').html("Yout are Dead");
+        $('#hero-health').html("You are Dead");
         $('#enemy-health').html("You are the Winner");
         $("button").attr('disabled', true);
         console.log("You Lose!");

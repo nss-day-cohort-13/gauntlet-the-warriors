@@ -45,6 +45,7 @@ var Gauntlet = (function(gauntlet) {
 
   gauntlet.Combatants.Player.prototype.setWeapon = function(newWeapon) {
     this.weapon = newWeapon;
+
   }
 
   gauntlet.Combatants.Player.prototype.generateClass = function() {

@@ -43,7 +43,7 @@ var Gauntlet = (function(gauntlet) {
 
 
   gauntlet.GuildHall.BeastMaster = function() {
-    this.name = "BeastMaster";
+    this.name = "Beast Master";
     this.healthBonus = this.healthBonus + 20;
     this.strengthBonus = this.strengthBonus + 20;
   };
@@ -84,7 +84,7 @@ var Gauntlet = (function(gauntlet) {
 
 
   gauntlet.GuildHall.BlackMage = function() {
-    this.name = "BlackMage";
+    this.name = "Black Mage";
     this.healthBonus = this.healthBonus + 10;
     this.strengthBonus = this.strengthBonus - 5;
     this.intelligenceBonus = this.intelligenceBonus + 20;
@@ -102,7 +102,7 @@ var Gauntlet = (function(gauntlet) {
 
 
   gauntlet.GuildHall.SailorScout = function() {
-    this.name = "SailorScout";
+    this.name = "Sailor Scout";
     this.strengthBonus = this.strengthBonus - 10;
     this.intelligenceBonus = this.intelligenceBonus + 10;
   };

@@ -95,6 +95,46 @@ $(document).ready(function() {
         userCharacter.class = new Gauntlet.GuildHall.BeastMaster();
         console.log("userCharacter", userCharacter);
         break;
+      case "Boxer":
+        userCharacter.class = new Gauntlet.GuildHall.Boxer();
+        console.log("userCharacter", userCharacter);
+        break;
+      case "Samurai":
+        userCharacter.class = new Gauntlet.GuildHall.Samurai();
+        console.log("userCharacter", userCharacter);
+        break;
+      case "BlackMage":
+        userCharacter.class = new Gauntlet.GuildHall.BlackMage();
+        console.log("userCharacter", userCharacter);
+        break;
+      case "Illusionist":
+        userCharacter.class = new Gauntlet.GuildHall.Illusionist();
+        console.log("userCharacter", userCharacter);
+        break;
+      case "SailorScout":
+        userCharacter.class = new Gauntlet.GuildHall.SailorScout();
+        console.log("userCharacter", userCharacter);
+        break;
+      case "Alchemist":
+        userCharacter.class = new Gauntlet.GuildHall.Alchemist();
+        console.log("userCharacter", userCharacter);
+        break;
+      case "Thief":
+        userCharacter.class = new Gauntlet.GuildHall.Thief();
+        console.log("userCharacter", userCharacter);
+        break;
+      case "Shinobi":
+        userCharacter.class = new Gauntlet.GuildHall.Shinobi();
+        console.log("userCharacter", userCharacter);
+        break;
+      case "Assassin":
+        userCharacter.class = new Gauntlet.GuildHall.Assassin();
+        console.log("userCharacter", userCharacter);
+        break;
+      case "Scout":
+        userCharacter.class = new Gauntlet.GuildHall.Scout();
+        console.log("userCharacter", userCharacter);
+        break;
     }
   });
 

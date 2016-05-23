@@ -77,7 +77,7 @@ var Gauntlet = (function(gauntlet) {
     randomSkin = Math.round(Math.random() * (this.skinColors.length-1));
     this.skinColor = this.skinColors[randomSkin];
 
-    this.allowedClasses = ["Saiyan", "BeastMaster", "Boxer", "Samurai"];
+    this.allowedClasses = ["Saiyan", "BeastMaster", "Boxer", "Samurai", "BlackMage", "Illusionist", "SailorScout", "Alchemist", "Thief", "Shinobi", "Assassin", "Scout"];
   };
   gauntlet.Combatants.Human.prototype = new gauntlet.Combatants.Player();
 

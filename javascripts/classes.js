@@ -22,10 +22,10 @@ var Gauntlet = (function(gauntlet) {
 
   /*
       FIGHTER CLASSES
-        - Warrior
-        - Valkyrie
-        - Berserker
-        - Monk
+        - Saiyan
+        - Beast Master
+        - Boxer
+        - Samurai
    */
   gauntlet.GuildHall.Fighter = function() {
     this.healthBonus = 20;
@@ -34,44 +34,44 @@ var Gauntlet = (function(gauntlet) {
   gauntlet.GuildHall.Fighter.prototype = new gauntlet.GuildHall.PlayerClass();
 
 
-  gauntlet.GuildHall.Warrior = function() {
-    this.name = "Warrior";
+  gauntlet.GuildHall.Saiyan = function() {
+    this.name = "Saiyan";
     this.healthBonus = this.healthBonus + 25;
-    this.strengthBonus = this.strengthBonus + 30;
-  };
-  gauntlet.GuildHall.Warrior.prototype = new gauntlet.GuildHall.Fighter();
-
-
-  gauntlet.GuildHall.Valkyrie = function() {
-    this.name = "Valkyrie";
-    this.healthBonus = this.healthBonus + 20;
-    this.strengthBonus = this.strengthBonus + 10;
-  };
-  gauntlet.GuildHall.Valkyrie.prototype = new gauntlet.GuildHall.Fighter();
-
-
-  gauntlet.GuildHall.Berserker = function() {
-    this.name = "Berserker";
-    this.healthBonus = this.healthBonus + 35;
-    this.strengthBonus = this.strengthBonus + 20;
-  };
-  gauntlet.GuildHall.Berserker.prototype = new gauntlet.GuildHall.Fighter();
-
-
-  gauntlet.GuildHall.Monk = function() {
-    this.name = "Monk";
-    this.healthBonus = this.healthBonus + 10;
     this.strengthBonus = this.strengthBonus + 40;
   };
-  gauntlet.GuildHall.Monk.prototype = new gauntlet.GuildHall.Fighter();
+  gauntlet.GuildHall.Saiyan.prototype = new gauntlet.GuildHall.Fighter();
+
+
+  gauntlet.GuildHall.BeastMaster = function() {
+    this.name = "BeastMaster";
+    this.healthBonus = this.healthBonus + 20;
+    this.strengthBonus = this.strengthBonus + 20;
+  };
+  gauntlet.GuildHall.BeastMaster.prototype = new gauntlet.GuildHall.Fighter();
+
+
+  gauntlet.GuildHall.Boxer = function() {
+    this.name = "Boxer";
+    this.healthBonus = this.healthBonus + 15;
+    this.strengthBonus = this.strengthBonus + 30;
+  };
+  gauntlet.GuildHall.Boxer.prototype = new gauntlet.GuildHall.Fighter();
+
+
+  gauntlet.GuildHall.Samurai = function() {
+    this.name = "Samurai";
+    this.healthBonus = this.healthBonus + 19;
+    this.strengthBonus = this.strengthBonus + 25;
+  };
+  gauntlet.GuildHall.Samurai.prototype = new gauntlet.GuildHall.Fighter();
 
 
   /*
       MAGICAL CLASSES
-        - Shaman
-        - Wizard
-        - Conujurer
-        - Sorcerer
+        - Black Mage
+        - Illusionist
+        - Sailor Scout
+        - Alchemist
    */
   gauntlet.GuildHall.Mage = function() {
     this.name = "Mage";
@@ -120,8 +120,9 @@ var Gauntlet = (function(gauntlet) {
   /*
       STEALTH CLASSES
         - Thief
-        - Ninja
+        - Shinobi
         - Assassin
+        - Scout
    */
 
   return gauntlet;

@@ -91,12 +91,12 @@ $(document).ready(function() {
     console.log("class of ", playerClass);
     console.dir(playerClass);
     switch (playerClass) {
-      case "Warrior":
-        userCharacter.class = new Gauntlet.GuildHall.Warrior();
+      case "Saiyan":
+        userCharacter.class = new Gauntlet.GuildHall.Saiyan();
         console.log("userCharacter", userCharacter);
         break;
-      case "Valkyrie":
-        userCharacter.class = new Gauntlet.GuildHall.Valkyrie();
+      case "BeastMaster":
+        userCharacter.class = new Gauntlet.GuildHall.BeastMaster();
         console.log("userCharacter", userCharacter);
         break;
     }

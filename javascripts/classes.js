@@ -90,14 +90,8 @@ var Gauntlet = (function(gauntlet) {
 
 
   gauntlet.GuildHall.SailorScout = function() {
-<<<<<<< HEAD
     this.name = "SailorScout";
     this.healthBonus = this.healthBonus - 5;
-=======
-    this.name = "Sailor Scout";
-    this.strengthBonus = this.strengthBonus - 10;
-    this.intelligenceBonus = this.intelligenceBonus + 10;
->>>>>>> b10d46a69c2cc35f507701472b1d4a27d29cd340
   };
   gauntlet.GuildHall.SailorScout.prototype = new gauntlet.GuildHall.Mage();
 

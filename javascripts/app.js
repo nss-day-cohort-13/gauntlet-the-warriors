@@ -53,26 +53,28 @@ $(document).ready(function() {
         break;
       case "card--battleground":
         moveAlong = ($("#player-name").val() !== "") && playerWeapon !== "";
-
+        $(".play-again-link").hide();
+        $(".prepare").hide().slideDown(2000);
+        $("#attack_battleground").hide().fadeIn(4000);
         console.log("Player", Gauntlet.Combatants.Player);
-
+        $("#player_battleground").hide()
         $("#player_battleground").html("<h1>" + "Our Hero" + "</h1>" +
-                                      "<p>" + userCharacter.playerName + "</p>" +
-                                      "<p>" + userCharacter.species + "</p>" +
-                                      "<p>" + userCharacter.class + "</p>" +
-                                      "<p>" + userCharacter.weapon + "</p>" +
-                                      "<p id='hero-health'>" + userCharacter.health + "</p>");
+                                      "<p>Name:  " + userCharacter.playerName + "</p>" +
+                                      "<p>Specie:  " + userCharacter.species + "</p>" +
+                                      "<p>Class:  " + userCharacter.class + "</p>" +
+                                      "<p>Weapon:  " + userCharacter.weapon + "</p>" +
+                                      "<p id='hero-health'>Health:  " + userCharacter.health + "</p>").fadeIn(1800);
 
         enemy = new Gauntlet.Combatants.Orc();
         enemy.generateClass();
         enemy.setWeapon(new Gauntlet.Weapons.Weapon);
-        console.log(enemy);
+        $("#enemy_battleground").hide()
         $("#enemy_battleground").html("<h1>" + "Enemy" + "</h1>" +
-                                      "<p>" + enemy.playerName + "</p>" +
-                                      "<p>" + enemy.species + "</p>" +
-                                      "<p>" + enemy.class + "</p>" +
-                                      "<p>" + enemy.weapon + "</p>" +
-                                      "<p id='enemy-health'>" + enemy.health + "</p>");
+                                      "<p>Name:  " + enemy.playerName + "</p>" +
+                                      "<p>Specie:  " + enemy.species + "</p>" +
+                                      "<p>Class:  " + enemy.class + "</p>" +
+                                      "<p>Weapon:  " + enemy.weapon + "</p>" +
+                                      "<p id='enemy-health'>Health:  " + enemy.health + "</p>").fadeIn(1800);
         break;
     }
 
@@ -187,19 +189,24 @@ $(document).ready(function() {
     console.log(userCharacter.health);
     $('#hero-health').html(userCharacter.health);
     if (enemy.health <= 0) {
-        $('#enemy-health').html("You are Dead");
-        $('#hero-health').html("You are the Winner");
-        $("button").attr('disabled', true);
+        $('#enemy-health').html("You slaughtered the Enemy!");
+        $('#hero-health').html("You live to see another day!");
+        $(".attack__link").attr('disabled', true);
         console.log("You Win!");
     } else if (userCharacter.health <= 0) {
-        $('#hero-health').html("You are Dead");
-        $('#enemy-health').html("You are the Winner");
-        $("button").attr('disabled', true);
+        $('#hero-health').html("You were slaughtered!");
+        $('#enemy-health').html("The Enemy has killed our Hero!" );
+        $(".attack__link").attr('disabled', true);
         console.log("You Lose!");
     } else {
         return;
     }
+
+        $(".play-again-link").fadeIn(5000);
   })
+        $(".play-again-link").click(function(e) {
+    location.reload();
+});
 
   /*
     When the back button clicked, move back a view

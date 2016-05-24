@@ -2,25 +2,19 @@
 /*
   Test code to generate a human player and an orc player
  */
-var warrior = new Gauntlet.Combatants.Human();
-warrior.setWeapon(new Gauntlet.Weapons.WarAxe());
-warrior.generateClass();  // This will be used for "Surprise me" option
-console.log(warrior.toString());
+// var warrior = new Gauntlet.Combatants.Human();
+// warrior.setWeapon(new Gauntlet.Weapons.WarAxe());
+// warrior.generateClass();  // This will be used for "Surprise me" option
+// console.log(warrior.toString());
 
-var orc = new Gauntlet.Combatants.Orc();
-orc.generateClass();
-orc.setWeapon(new Gauntlet.Weapons.BroadSword());
-console.log(orc.toString());
-
-/*
-  Test code to generate a spell
- */
-var spell = new Gauntlet.SpellBook.Sphere();
-console.log("spell: ", spell.toString());
-
+// var orc = new Gauntlet.Combatants.Orc();
+// orc.generateClass();
+// orc.setWeapon(new Gauntlet.Weapons.BroadSword());
+// console.log(orc.toString());
 
 $(document).ready(function() {
 
+  // Global variable for enemy
   var enemy
 
   //Variables storing player's name, class, and weapon choices
@@ -41,20 +35,20 @@ $(document).ready(function() {
     var nextCard = $(this).attr("next");
     var moveAlong = false;
 
-
+    // Switch statement determines what happens when the screens move forward
     switch (nextCard) {
       case "card--class":
         moveAlong = ($("#player-name").val() !== "" && userCharacter);
         userCharacter.playerName = $("#player-name").val();
-        console.log("user", userCharacter);
+        console.log(userCharacter.playerName + " is our Hero!");
         break;
       case "card--weapon":
         moveAlong = ($("#player-name").val() !== "") && playerClass !== "";
+        console.log("You have chosen the " + playerClass + " class.");
         break;
       case "card--battleground":
         moveAlong = ($("#player-name").val() !== "") && playerWeapon !== "";
-
-        console.log("Player", Gauntlet.Combatants.Player);
+        console.log("You have chosen the " + playerWeapon + " as your weapon.", "Go defeat your enemies!");
 
         $("#player_battleground").html("<h1>" + "Our Hero" + "</h1>" +
                                       "<p>" + userCharacter.playerName + "</p>" +
@@ -65,8 +59,7 @@ $(document).ready(function() {
 
         enemy = new Gauntlet.Combatants.Orc();
         enemy.generateClass();
-        enemy.setWeapon(new Gauntlet.Weapons.Weapon);
-        console.log(enemy);
+        enemy.generateWeapon();
         $("#enemy_battleground").html("<h1>" + "Enemy" + "</h1>" +
                                       "<p>" + enemy.playerName + "</p>" +
                                       "<p>" + enemy.species + "</p>" +
@@ -84,116 +77,93 @@ $(document).ready(function() {
 
   $(".class__link").click(function(e) {
     playerClass = $(this).find(".btn__text").html();
-    console.log("class of ", playerClass);
-    console.dir(playerClass);
     switch (playerClass) {
       case "Saiyan":
         userCharacter.class = new Gauntlet.GuildHall.Saiyan();
-        console.log("userCharacter", userCharacter);
         break;
       case "BeastMaster":
         userCharacter.class = new Gauntlet.GuildHall.BeastMaster();
-        console.log("userCharacter", userCharacter);
         break;
       case "Boxer":
         userCharacter.class = new Gauntlet.GuildHall.Boxer();
-        console.log("userCharacter", userCharacter);
         break;
       case "Samurai":
         userCharacter.class = new Gauntlet.GuildHall.Samurai();
-        console.log("userCharacter", userCharacter);
         break;
       case "BlackMage":
         userCharacter.class = new Gauntlet.GuildHall.BlackMage();
-        console.log("userCharacter", userCharacter);
         break;
       case "Illusionist":
         userCharacter.class = new Gauntlet.GuildHall.Illusionist();
-        console.log("userCharacter", userCharacter);
         break;
       case "SailorScout":
         userCharacter.class = new Gauntlet.GuildHall.SailorScout();
-        console.log("userCharacter", userCharacter);
         break;
       case "Alchemist":
         userCharacter.class = new Gauntlet.GuildHall.Alchemist();
-        console.log("userCharacter", userCharacter);
         break;
       case "Thief":
         userCharacter.class = new Gauntlet.GuildHall.Thief();
-        console.log("userCharacter", userCharacter);
         break;
       case "Shinobi":
         userCharacter.class = new Gauntlet.GuildHall.Shinobi();
-        console.log("userCharacter", userCharacter);
         break;
       case "Assassin":
         userCharacter.class = new Gauntlet.GuildHall.Assassin();
-        console.log("userCharacter", userCharacter);
         break;
       case "Scout":
         userCharacter.class = new Gauntlet.GuildHall.Scout();
-        console.log("userCharacter", userCharacter);
+        break;
+      case "surprise me":
+        userCharacter.generateClass();
         break;
     }
   });
 
   $(".weapon__link").click(function(e) {
     playerWeapon = $(this).find(".btn__text").html();
-    console.log("player is wielding ", playerWeapon);
     switch (playerWeapon) {
       case "Bare Fists":
         userCharacter.weapon = new Gauntlet.Weapons.Weapon();
-        console.log("userCharacter weapon: ", userCharacter);
         break;
       case "Dagger":
         userCharacter.weapon = new Gauntlet.Weapons.Dagger();
-        console.log("userCharacter weapon: ", userCharacter);
         break;
       case "Broad Sword":
         userCharacter.weapon = new Gauntlet.Weapons.BroadSword();
-        console.log("userCharacter weapon: ", userCharacter);
         break;
       case "War Axe":
         userCharacter.weapon = new Gauntlet.Weapons.WarAxe();
-        console.log("userCharacter weapon: ", userCharacter);
         break;
       case "Blunderbuss":
-      userCharacter.weapon = new Gauntlet.Weapons.Blunderbuss();
-        console.log("userCharacter weapon: ", userCharacter);
+        userCharacter.weapon = new Gauntlet.Weapons.Blunderbuss();
         break;
-        case "1911":
-      userCharacter.weapon = new Gauntlet.Weapons.N1911();
-        console.log("userCharacter weapon: ", userCharacter);
+      case "1911":
+        userCharacter.weapon = new Gauntlet.Weapons.N1911();
         break;
       case "Garand":
-      userCharacter.weapon = new Gauntlet.Weapons.Garand();
-        console.log("userCharacter weapon: ", userCharacter);
+        userCharacter.weapon = new Gauntlet.Weapons.Garand();
         break;
       case "Kalashnikov":
-      userCharacter.weapon = new Gauntlet.Weapons.Kalashnikov();
-        console.log("userCharacter weapon: ", userCharacter);
+        userCharacter.weapon = new Gauntlet.Weapons.Kalashnikov();
         break;
     }
   });
 
-// check functionality after player info is captured & added to DOM
+// Calculates attack damage and substracts it from combatants health. Announces winner
   $(".attack__link").click(function(e) {
-    console.log("Attack!");
     enemy.health -= userCharacter.weapon.damage;
-    console.log(enemy.health);
     $('#enemy-health').html(enemy.health);
     userCharacter.health -= enemy.weapon.damage;
-    console.log(userCharacter.health);
     $('#hero-health').html(userCharacter.health);
     if (enemy.health <= 0) {
-        $('#enemy-health').html("You are Dead");
-        $('#hero-health').html("You are the Winner");
+        $('#enemy-health').html("Your Enemy is Slain");
+        $('#hero-health').html("You are Victorious!");
         $("button").attr('disabled', true);
         console.log("You Win!");
     } else if (userCharacter.health <= 0) {
-        $('#hero-health').html("You are Dead");
-        $('#enemy-health').html("You are the Winner");
+        $('#hero-health').html("You Have Been Slain");
+        $('#enemy-health').html("The Enemy Has Won!");
         $("button").attr('disabled', true);
         console.log("You Lose!");
     } else {

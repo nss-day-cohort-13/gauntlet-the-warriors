@@ -13,30 +13,20 @@ var Gauntlet = (function(gauntlet) {
     this.species = null;
     this.class = null;
     this.weapon = null;
-    console.log("test name", $("#player-name").val());
     this.playerName = $("#player-name").val() || "unknown adventurer";
     this.health = Math.floor(Math.random() * 40 + 50);
-    this.limbs = ["head", "neck", "arm", "leg", "torso"];
-    this.skinColor = "gray";
-    this.skinColors = [this.skinColor];
-    this.strength = 90;
-    this.intelligence = 90;
 
     this.toString = function() {
       var output = [this.playerName,
         ": a ",
-        this.skinColor,
-        " skinned ",
         this.species,
         " ",
         this.class,
         " with ",
-
-
         this.health,
         " health. ",
-        (this.class.magical) ? "Able to cast " : " Wielding a ",
-        this.weapon.toString(),
+        " Wielding a ",
+        this.weapon,
         "!"
       ].join("");
       return output;
@@ -68,31 +58,10 @@ var Gauntlet = (function(gauntlet) {
     constructor function.
    */
   gauntlet.Combatants.Human = function() {
-    var randomSkin;
-
     this.species = "Human";
-    this.intelligence = this.intelligence + 20;
-
-    this.skinColors.push("brown", "red", "white", "disease");
-    randomSkin = Math.round(Math.random() * (this.skinColors.length-1));
-    this.skinColor = this.skinColors[randomSkin];
-
     this.allowedClasses = ["Saiyan", "BeastMaster", "Boxer", "Samurai", "BlackMage", "Illusionist", "SailorScout", "Alchemist", "Thief", "Shinobi", "Assassin", "Scout"];
   };
   gauntlet.Combatants.Human.prototype = new gauntlet.Combatants.Player();
-
-
-  /*
-    Define the base properties for a monster in a
-    constructor function.
-   */
-  gauntlet.Combatants.Monster = function() {
-    this.health = this.health - 30;
-    this.intelligence = this.intelligence -20;
-    this.strength = this.strength + 30;
-  };
-
-  gauntlet.Combatants.Monster.prototype = new gauntlet.Combatants.Player();
 
   return gauntlet;
 

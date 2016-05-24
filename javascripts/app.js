@@ -81,7 +81,7 @@ $(document).ready(function() {
       case "Saiyan":
         userCharacter.class = new Gauntlet.GuildHall.Saiyan();
         break;
-      case "BeastMaster":
+      case "Beast Master":
         userCharacter.class = new Gauntlet.GuildHall.BeastMaster();
         break;
       case "Boxer":
@@ -90,13 +90,13 @@ $(document).ready(function() {
       case "Samurai":
         userCharacter.class = new Gauntlet.GuildHall.Samurai();
         break;
-      case "BlackMage":
+      case "Black Mage":
         userCharacter.class = new Gauntlet.GuildHall.BlackMage();
         break;
       case "Illusionist":
         userCharacter.class = new Gauntlet.GuildHall.Illusionist();
         break;
-      case "SailorScout":
+      case "Sailor Scout":
         userCharacter.class = new Gauntlet.GuildHall.SailorScout();
         break;
       case "Alchemist":
